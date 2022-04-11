@@ -86,6 +86,7 @@ The following table lists the supported screen readers in the order in which the
     JAWS            Yes      Yes       No       Yes   Yes
     Window-Eyes     Yes      Yes       No       Yes   Yes
     NVDA            Yes      Yes       No       Yes   Yes
+    ZDSR            Yes      NO       YES       Yes   Yes
     SuperNova       Yes      No        No       Yes   No
     System Access   Yes      Yes       No       Yes   Yes
     ZoomText        Yes      No        Yes      Yes   Yes
