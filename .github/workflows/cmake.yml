@@ -1,6 +1,12 @@
 name: Windows
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   msvc:
@@ -13,6 +19,7 @@ jobs:
           - name: VS2019Release64
             vmimage: windows-2019
             cmakeplatform: x64
+
     runs-on: ${{ matrix.vmimage }}
     name: ${{ matrix.name }}
     steps:
