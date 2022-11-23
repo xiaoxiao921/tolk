@@ -1,4 +1,4 @@
-name: cmake
+name: Windows
 
 on:
   push:
@@ -13,12 +13,12 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: VS2019-x86
+          - name: VS2019Release32
             vmimage: windows-2019
             cmakeplatform: Win32
-          - name: VS2019-x64
+          - name: VS2019Release64
             vmimage: windows-2019
-            cmakeplatform: Win64
+            cmakeplatform: x64
 
     runs-on: ${{ matrix.vmimage }}
     name: ${{ matrix.name }}
