@@ -50,9 +50,9 @@ target_compile_options (Tolk PRIVATE ${TOLK_COMPILE_FLAGS})
 
 ## ---- install
 # add README
-install (FILES docs/README.md)
+install (FILES docs/README.md DESTINATION docs)
 # add LICENSE
-install (FILES LICENSE.txt LICENSE-NVDA.txt)
+install (FILES LICENSE.txt LICENSE-NVDA.txt DESTINATION license)
 # add Binay DLL
 install (TARGETS Tolk DESTINATION lib)
 # add header file
