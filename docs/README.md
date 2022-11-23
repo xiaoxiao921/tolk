@@ -1,6 +1,7 @@
 # Tolk: Screen Reader Abstraction Library
 
-* [Latest build from AppVeyor](https://ci.appveyor.com/api/projects/dkager/tolk/artifacts/tolk.zip?branch=master)
+[![Windows](https://github.com/game-a11y/tolk/actions/workflows/cmake.yml/badge.svg)](https://github.com/game-a11y/tolk/actions/workflows/cmake.yml)
+
 * Project page: https://davykager.com/projects/tolk/ (This URL is broken!)
 
 ## Introduction
