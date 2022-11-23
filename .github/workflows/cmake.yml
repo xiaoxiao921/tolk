@@ -23,7 +23,7 @@ jobs:
     runs-on: ${{ matrix.vmimage }}
     name: ${{ matrix.name }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Generate CMake Projects
       working-directory: ${{runner.workspace}}
@@ -43,7 +43,7 @@ jobs:
       run: |
         cmake --build output --target install
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: tolk-binaries-${{ matrix.cmakeplatform }}
         path: ${{runner.workspace}}/install
