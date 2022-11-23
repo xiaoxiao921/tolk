@@ -13,10 +13,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: VS2019Release32
+          - name: VS2019-x86
             vmimage: windows-2019
             cmakeplatform: Win32
-          - name: VS2019Release64
+          - name: VS2019-x64
             vmimage: windows-2019
             cmakeplatform: x64
 
