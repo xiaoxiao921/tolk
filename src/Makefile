@@ -3,7 +3,10 @@ OUTDIR = $(MAKEDIR)
 !endif
 
 CFLAGS = /nologo /O2 /EHsc /LD /Gw /W4 /WL \
-	/D_EXPORTING /DUNICODE /D_WITH_JNI
+	/D_EXPORTING /DUNICODE
+## Uncomment next line, if you need JNI.
+# CFLAGS += /D_WITH_JNI
+
 RFLAGS = /nologo
 
 SYSLIBS = User32.Lib Ole32.Lib OleAut32.Lib
