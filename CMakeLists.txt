@@ -47,8 +47,17 @@ target_include_directories (Tolk INTERFACE src)
 target_link_libraries (Tolk PRIVATE ${TOLK_LINK_FLAGS})
 target_compile_options (Tolk PRIVATE ${TOLK_COMPILE_FLAGS})
 
+
+## ---- install
+# add README
+install (FILES docs\README.md)
+# add LICENSE
+install (FILES LICENSE.txt LICENSE-NVDA.txt)
+# add Binay DLL
 install (TARGETS Tolk DESTINATION lib)
+# add header file
 install (FILES src/Tolk.h DESTINATION include)
+# add Client libraries
 if (${CMAKE_GENERATOR_PLATFORM} MATCHES "x64")
   install (FILES libs/x64/nvdaControllerClient64.dll libs/x64/SAAPI64.dll DESTINATION lib)
 else()
