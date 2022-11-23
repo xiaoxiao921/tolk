@@ -16,7 +16,7 @@ protected:
     hasSpeech(speech),
     hasBraille(braille)
     {}
-  ScreenReaderDriver& operator=(const ScreenReaderDriver&) {}
+  ScreenReaderDriver& operator=(const ScreenReaderDriver&) = delete;
 
 public:
   virtual ~ScreenReaderDriver() {}

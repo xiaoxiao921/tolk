@@ -2,10 +2,12 @@
 OUTDIR = $(MAKEDIR)
 !endif
 
+# Referece "/I" flag: 
+# https://docs.microsoft.com/en-us/cpp/build/reference/i-additional-include-directories?view=msvc-170
 CFLAGS = /nologo /O2 /EHsc /LD /Gw /W4 /WL \
 	/D_EXPORTING /DUNICODE
 ## Uncomment next line, if you need JNI.
-# CFLAGS += /D_WITH_JNI
+# /D_WITH_JNI /I "$(JAVA_HOME)include" /I"$(JAVA_HOME)include\win32"
 
 RFLAGS = /nologo
 
