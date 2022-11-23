@@ -50,7 +50,7 @@ target_compile_options (Tolk PRIVATE ${TOLK_COMPILE_FLAGS})
 
 ## ---- install
 # add README
-install (FILES docs\README.md)
+install (FILES docs/README.md)
 # add LICENSE
 install (FILES LICENSE.txt LICENSE-NVDA.txt)
 # add Binay DLL
