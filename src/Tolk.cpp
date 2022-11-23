@@ -15,6 +15,7 @@
 #include "ScreenReaderDriverSAPI.h"
 #include "ScreenReaderDriverSNova.h"
 #include "ScreenReaderDriverWE.h"
+#include "ScreenReaderDriverZDSR.h"
 #include "ScreenReaderDriverZT.h"
 
 using namespace std;
@@ -32,6 +33,7 @@ TOLK_DLL_DECLSPEC void TOLK_CALL Tolk_Load() {
   if (CoInitializeEx(NULL, COINIT_MULTITHREADED) == S_FALSE) CoUninitialize();
   if (Tolk_IsLoaded()) return;
   g_screenReaderDrivers.push_back(new ScreenReaderDriverJAWS());
+  g_screenReaderDrivers.push_back(new ScreenReaderDriverZDSR());
   g_screenReaderDrivers.push_back(new ScreenReaderDriverWE());
   g_screenReaderDrivers.push_back(new ScreenReaderDriverNVDA());
 #ifndef _WIN64
