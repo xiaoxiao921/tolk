@@ -39,6 +39,7 @@ add_library(Tolk SHARED src/Tolk.cpp src/Tolk.h src/TolkVersion.h src/TolkJNI.cp
   src/ScreenReaderDriverSA.cpp src/ScreenReaderDriverSA.h
   src/ScreenReaderDriverSNova.cpp src/ScreenReaderDriverSNova.h
   src/ScreenReaderDriverWE.cpp src/ScreenReaderDriverWE.h
+  src/ScreenReaderDriverZDSR.cpp src/ScreenReaderDriverZDSR.h
   src/ScreenReaderDriverZT.cpp src/ScreenReaderDriverZT.h
   src/ScreenReaderDriverSAPI.cpp src/ScreenReaderDriverSAPI.h
   src/fsapi.c src/fsapi.h src/wineyes.c src/wineyes.h src/zt.c src/zt.h)
@@ -60,6 +61,8 @@ install (FILES src/Tolk.h DESTINATION include)
 # add Client libraries
 if (${CMAKE_GENERATOR_PLATFORM} MATCHES "x64")
   install (FILES libs/x64/nvdaControllerClient64.dll libs/x64/SAAPI64.dll DESTINATION lib)
+  install (FILES libs/x64/ZDSRAPI_x64.dll libs/x64/ZDSRAPI.ini DESTINATION lib)
 else()
   install (FILES libs/x86/dolapi32.dll libs/x86/nvdaControllerClient32.dll libs/x86/SAAPI32.dll DESTINATION lib)
+  install (FILES libs/x64/ZDSRAPI.dll libs/x64/ZDSRAPI.ini DESTINATION lib)
 endif()
