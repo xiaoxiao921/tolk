@@ -2,7 +2,7 @@
 
 [![Windows](https://github.com/game-a11y/tolk/actions/workflows/cmake.yml/badge.svg)](https://github.com/game-a11y/tolk/actions/workflows/cmake.yml)
 
-* Project page: https://davykager.com/projects/tolk/ (This URL is broken!)
+* Project page: https://davykager.com/projects/tolk/ (This URL is broken!) [[web.archive]](https://web.archive.org/web/20190824230209/http://davykager.com/projects/tolk/)
 
 ## Introduction
 
