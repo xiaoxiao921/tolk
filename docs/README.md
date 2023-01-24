@@ -175,4 +175,4 @@ The root directory and `examples` directories contain various batch files as a s
 * Davy Kager
 * Leonard de Ruijter
 * Axel Vugts
-* QuentinC, who has developed [Universal Speech](https://github.com/QuentinC-Github/UniversalSpeech), another great screen reader library
+* QuentinC, who has developed [Universal Speech](https://github.com/qtnc/UniversalSpeech), another great screen reader library
