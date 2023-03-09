@@ -48,6 +48,9 @@ target_include_directories (Tolk INTERFACE src)
 target_link_libraries (Tolk PRIVATE ${TOLK_LINK_FLAGS})
 target_compile_options (Tolk PRIVATE ${TOLK_COMPILE_FLAGS})
 
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+  target_link_libraries(Tolk PUBLIC -static-libgcc;-static-libstdc++)
+endif()
 
 ## ---- install
 # add README
