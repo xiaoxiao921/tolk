@@ -22,7 +22,7 @@ jobs:
 
     - name: Generate CMake Projects
       working-directory: ${{runner.workspace}}
-      run: cmake -S tolk -B output -DCMAKE_INSTALL_PREFIX=install -DCMAKE_TOOLCHAIN_FILE=../CMake/mingwcc64.toolchain.cmake
+      run: cmake -S tolk -B output -DCMAKE_INSTALL_PREFIX=install -DCMAKE_TOOLCHAIN_FILE=../tolk/CMake/mingwcc64.toolchain.cmake
 
     - name: Build CMake Projects
       working-directory: ${{runner.workspace}}
