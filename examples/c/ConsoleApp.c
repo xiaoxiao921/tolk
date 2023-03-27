@@ -13,9 +13,9 @@
 #define UNICODE
 
 #include <stdio.h>
-#include "..\..\src\Tolk.h"
+#include "../../src/Tolk.h"
 
-void main() {
+int main() {
   const wchar_t *name = NULL;
 
   wprintf_s(L"Tolk -- C Console App Example\n");
@@ -52,4 +52,5 @@ void main() {
   Tolk_Unload();
 
   wprintf_s(L"Done!\n");
+  return 0;
 }

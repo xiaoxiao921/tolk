@@ -11,11 +11,11 @@
 // See Tolk.h for full documentation of all functions.
 
 #include <iostream>
-#include "..\..\src\Tolk.h"
+#include "../../src/Tolk.h"
 
 using namespace std;
 
-void main() {
+int main() {
   wcout << L"Tolk -- C++ Console App Example" << endl;
 
   wcout << L"Initializing Tolk..." << endl;
@@ -49,4 +49,6 @@ void main() {
   Tolk_Unload();
 
   wcout << L"Done!" << endl;
+
+  return 0;
 }

@@ -16,7 +16,7 @@ if (TOLK_MULTITHREADED)
 endif()
 
 set (TOLK_COMPILE_FLAGS -D_EXPORTING -DUNICODE -D_UNICODE)
-set (TOLK_LINK_FLAGS User32 Ole32 OleAut32)
+set (TOLK_LINK_FLAGS user32 ole32 oleaut32 sapi)
 
 # Find Java JDK so we can enable JNI support
 option (TOLK_WITH_JAVAJNI "Build Tolk with Java support" OFF)
@@ -48,6 +48,9 @@ target_include_directories (Tolk INTERFACE src)
 target_link_libraries (Tolk PRIVATE ${TOLK_LINK_FLAGS})
 target_compile_options (Tolk PRIVATE ${TOLK_COMPILE_FLAGS})
 
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+  target_link_libraries(Tolk PUBLIC -static-libgcc;-static-libstdc++)
+endif()
 
 ## ---- install
 # add README
