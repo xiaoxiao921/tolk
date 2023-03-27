@@ -4,6 +4,14 @@
 
 * Project page: https://davykager.com/projects/tolk/ (This URL is broken!) [[web.archive]](https://web.archive.org/web/20190824230209/http://davykager.com/projects/tolk/)
 
+
+## Related project
+
+- [C++, Windows-Only] [qtnc/UniversalSpeech](https://github.com/qtnc/UniversalSpeech)  
+    UniversalSpeech ibrary: make popular screen readers speak in your application
+- [Rust, Cross-platforms] [AccessKit/accesskit](https://github.com/AccessKit/accesskit)  
+    UI accessibility infrastructure across platforms and programming languages
+
 ## Introduction
 
 Tolk is an application extension (DLL) that allows Windows applications to output text through screen reader software (assistive technology for the blind and visually impaired). It is an abstraction layer on top of the vendor-specific APIs that auto-detects the active screen reader, allowing for clean and simple client code. Speech and braille output are supported in 32-bit and 64-bit environments. See `Supported screen readers` for more details. In addition to screen readers, Microsoft Speech API (SAPI) is also supported. The name Tolk is a Dutch word meaning interpreter.
