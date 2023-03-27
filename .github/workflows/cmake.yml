@@ -4,6 +4,17 @@ on:
   push:
     branches:
       - main
+    paths:
+      # dirs
+      - '.github/**/*.yml'
+      - 'CMake/*.cmake'
+      # TODO: set ci for those
+      # - 'contrib/**'
+      - 'libs/**/*.dll'
+      - 'src/**'
+      # top-level files
+      - 'CMakeLists.txt'
+      - 'Makefile'
   pull_request:
     branches:
       - main
