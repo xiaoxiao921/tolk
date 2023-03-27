@@ -15,35 +15,38 @@ jobs:
         include:
           - name: VS2019-x86
             vmimage: windows-2019
-            cmakeplatform: Win32
+            cmakeplatform: -A Win32
           - name: VS2019-x64
             vmimage: windows-2019
-            cmakeplatform: x64
+            cmakeplatform: -A x64
+          - name: Mingw-w64-x64
+            vmimage: ubuntu-20.04
+            cmakeplatform:
 
     runs-on: ${{ matrix.vmimage }}
     name: ${{ matrix.name }}
     steps:
     - uses: actions/checkout@v3
 
+    - name: Set up MinGW
+      uses: egor-tensin/setup-mingw@v2
+
     - name: Generate CMake Projects
       working-directory: ${{runner.workspace}}
-      shell: cmd
       run: |
-        cmake -S Tolk -B output -A ${{ matrix.cmakeplatform }} -DCMAKE_INSTALL_PREFIX=install
+        cmake -S tolk -B build ${{ matrix.cmakeplatform }} -DCMAKE_INSTALL_PREFIX=install -DCMAKE_TOOLCHAIN_FILE=../tolk/CMake/mingwcc64.toolchain.cmake
 
     - name: Build CMake Projects
       working-directory: ${{runner.workspace}}
-      shell: cmd
       run: |
-        cmake --build output
+        cmake --build build
 
     - name: Install CMake Projects
       working-directory: ${{runner.workspace}}
-      shell: cmd
       run: |
-        cmake --build output --target install
+        cmake --build build --target install
 
     - uses: actions/upload-artifact@v3
       with:
-        name: tolk-binaries-${{ matrix.cmakeplatform }}
+        name: tolk-${{ matrix.name }}
         path: ${{runner.workspace}}/install
