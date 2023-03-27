@@ -4,6 +4,17 @@ on:
   push:
     branches:
       - main
+    paths:
+      # dirs
+      - '.github/**/*.yml'
+      - 'CMake/*.cmake'
+      # TODO: set ci for those
+      # - 'contrib/**'
+      - 'libs/**/*.dll'
+      - 'src/**'
+      # top-level files
+      - 'CMakeLists.txt'
+      - 'Makefile'
   pull_request:
     branches:
       - main
@@ -29,6 +40,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Set up MinGW
+      if: ${{ 'ubuntu-20.04' == matrix.vmimage }}
       uses: egor-tensin/setup-mingw@v2
 
     - name: Generate CMake Projects
