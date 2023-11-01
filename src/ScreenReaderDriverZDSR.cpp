@@ -54,7 +54,8 @@ bool ScreenReaderDriverZDSR::IsSpeaking() {
 }
 
 bool ScreenReaderDriverZDSR::IsActive() {
-  return (zdsrGetSpeakState() >= 3);
+  if (zdsrGetSpeakState) return (zdsrGetSpeakState() >= 3);
+  return false;
 }
 
 bool ScreenReaderDriverZDSR::Output(const wchar_t *str, bool interrupt) {
