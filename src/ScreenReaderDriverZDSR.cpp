@@ -28,7 +28,8 @@ ScreenReaderDriverZDSR::ScreenReaderDriverZDSR() :
     zdsrGetSpeakState = (ZDSRGetSpeakState)GetProcAddress(controller, "GetSpeakState");
     zdsrSpeak = (ZDSRSpeak)GetProcAddress(controller, "Speak");
     zdsrStopSpeak = (ZDSRStopSpeak)GetProcAddress(controller, "StopSpeak");
-	zdsrInitTTS(0, NULL);
+
+	  zdsrInitTTS(0, NULL);
   }
 }
 
@@ -37,16 +38,18 @@ ScreenReaderDriverZDSR::~ScreenReaderDriverZDSR() {
 }
 
 bool ScreenReaderDriverZDSR::Speak(const wchar_t *str, bool interrupt) {
-  return (zdsrSpeak(str, interrupt) == 0);
+  if (zdsrSpeak) return (zdsrSpeak(str, interrupt) == 0);
+  return false;
 }
 
 bool ScreenReaderDriverZDSR::Silence() {
-  zdsrStopSpeak();
+  if (zdsrStopSpeak) zdsrStopSpeak();
   return true;
 }
 
 bool ScreenReaderDriverZDSR::IsSpeaking() {
-  return (zdsrGetSpeakState() == 3);
+  if (zdsrGetSpeakState) return (zdsrGetSpeakState() == 3);
+  return false;
 }
 
 bool ScreenReaderDriverZDSR::IsActive() {
