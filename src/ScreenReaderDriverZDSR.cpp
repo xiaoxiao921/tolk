@@ -40,10 +40,6 @@ bool ScreenReaderDriverZDSR::Speak(const wchar_t *str, bool interrupt) {
   return (zdsrSpeak(str, interrupt) == 0);
 }
 
-bool ScreenReaderDriverZDSR::Braille(const wchar_t *str) {
-  return true;
-}
-
 bool ScreenReaderDriverZDSR::Silence() {
   zdsrStopSpeak();
   return true;
