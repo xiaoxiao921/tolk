@@ -10,11 +10,11 @@
 #define _TOLK_H_
 
 #ifdef _EXPORTING
-#define TOLK_DLL_DECLSPEC __declspec(dllexport)
+#define TOLK_DLL_DECLSPEC 
 #else
-#define TOLK_DLL_DECLSPEC __declspec(dllimport)
+#define TOLK_DLL_DECLSPEC 
 #endif // _EXPORTING
-#define TOLK_CALL __cdecl
+#define TOLK_CALL 
 
 #ifdef __cplusplus
 extern "C" {
