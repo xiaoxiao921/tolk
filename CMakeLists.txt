@@ -32,7 +32,7 @@ if (TOLK_WITH_JAVAJNI)
   endif()
 endif()
 
-add_library(Tolk SHARED src/Tolk.cpp src/Tolk.h src/TolkVersion.h src/TolkJNI.cpp
+add_library(Tolk STATIC src/Tolk.cpp src/Tolk.h src/TolkVersion.h src/TolkJNI.cpp
   src/ScreenReaderDriver.h src/Tolk.rc
   src/ScreenReaderDriverJAWS.cpp src/ScreenReaderDriverJAWS.h
   src/ScreenReaderDriverNVDA.cpp src/ScreenReaderDriverNVDA.h
